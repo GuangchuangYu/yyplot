@@ -1,8 +1,8 @@
 Package: yyplot
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Yet Yu's Plot Utilities
+Version: 0.0.1
+Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
+Description: Yu's plot utilities. Most of them are experimental functions and not stable enough.
 Depends: R (>= 3.4.0)
 Imports:
     ggplot2,
