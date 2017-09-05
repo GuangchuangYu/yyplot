@@ -23,14 +23,17 @@
 ##' g <- set_font(p, family="Times", fontface="italic", color='firebrick')
 ##' grid.draw(g)
 ##' @author guangchuang yu
-set_font <- function(p, family="sans", fontface="plain", size=5, color="black") {
+set_font <- function(p, family="sans", fontface=NULL, size=NULL, color=NULL) {
+    par <- list(fontfamily = family, fontface=fontface, size=size, col=color)
+    par <- par[!sapply(par, is.null)]
+    gp <- do.call(gpar, par)
     g <- ggplotGrob(p)
     ng <- grid.ls(grid.force(g), print=FALSE)$name
     txt <- ng[which(grepl("text", ng))]
 
     for (i in seq_along(txt)) {
-        g <- editGrob(grid.force(g), gPath(txt[i]), grep=T,
-                      gp=gpar(fontfamily=family, fontface=fontface, size=size, col=color))
+        g <- editGrob(grid.force(g), gPath(txt[i]), grep = TRUE,
+                      gp = gp)
     }
     return(g)
 }
