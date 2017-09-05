@@ -1,15 +1,15 @@
 Package: yyplot
 Title: Yet Yu's Plot Utilities
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
 Description: Yu's plot utilities. Most of them are experimental functions and not stable enough.
 Depends: R (>= 3.4.0)
 Imports:
     ggplot2,
+    grid,
     qrcode,
     scholar,
     tidyr
-License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
