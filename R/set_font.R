@@ -24,7 +24,9 @@
 ##' grid.draw(g)
 ##' @author guangchuang yu
 set_font <- function(p, family="sans", fontface=NULL, size=NULL, color=NULL) {
-    par <- list(fontfamily = family, fontface=fontface, size=size, col=color)
+    if (!is.null(size))
+        size <- size  * .pt
+    par <- list(fontfamily = family, fontface = fontface, fontsize = size, col = color)
     par <- par[!sapply(par, is.null)]
     gp <- do.call(gpar, par)
     g <- ggplotGrob(p)
@@ -32,8 +34,8 @@ set_font <- function(p, family="sans", fontface=NULL, size=NULL, color=NULL) {
     txt <- ng[which(grepl("text", ng))]
 
     for (i in seq_along(txt)) {
-        g <- editGrob(grid.force(g), gPath(txt[i]), grep = TRUE,
-                      gp = gp)
+        g <- editGrob(grid.force(g), gPath(txt[i]),
+                      grep = TRUE, gp = gp)
     }
     return(g)
 }

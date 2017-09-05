@@ -4,8 +4,7 @@
 \alias{set_font}
 \title{set_font}
 \usage{
-set_font(p, family = "sans", fontface = "plain", size = 5,
-  color = "black")
+set_font(p, family = "sans", fontface = NULL, size = NULL, color = NULL)
 }
 \arguments{
 \item{p}{ggplot object}
@@ -28,7 +27,7 @@ setting font for ggplot (axis text, label, title, etc.)
 library(grid)
 library(ggplot2)
 d <- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
-p <- ggplot(d, aes(x, y)) + geom_text(aes(label=lab), size=5) + geom_text(aes(y, x, label=lab), size=3)
+p <- ggplot(d, aes(x, y)) + geom_text(aes(label=lab), size=5)
 g <- set_font(p, family="Times", fontface="italic", color='firebrick')
 grid.draw(g)
 }
