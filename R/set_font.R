@@ -14,6 +14,7 @@
 ##' @importFrom grid gPath
 ##' @importFrom grid gpar
 ##' @importFrom ggplot2 ggplotGrob
+##' @importFrom ggplot2 .pt
 ##' @export
 ##' @examples
 ##' library(grid)
