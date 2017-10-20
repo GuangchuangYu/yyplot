@@ -2,6 +2,7 @@
 
 export(ggqrcode)
 export(meme)
+export(meme_save)
 export(plot_citation_trend)
 export(set_axis_text_color)
 export(set_font)

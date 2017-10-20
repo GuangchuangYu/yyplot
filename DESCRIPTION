@@ -11,6 +11,7 @@ Imports:
     magick,
     qrcode,
     scholar,
+    svglite,
     tidyr
 Encoding: UTF-8
 LazyData: true
