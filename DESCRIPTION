@@ -6,8 +6,11 @@ Description: Yu's plot utilities. Most of them are experimental functions and no
 Depends: R (>= 3.4.0)
 Imports:
     ggplot2,
+    grDevices,
     grid,
+    gtable,
     magick,
+    meme,
     qrcode,
     scholar,
     tidyr
