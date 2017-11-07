@@ -30,13 +30,13 @@ slides2png <- function(pdf, outfile = "slides.png", scale=1, page="all", add_pag
         stop("page should be numeric vector")
 
 
-    width <- image_info(x[page])$width[page]
-    height <- image_info(x[page])$height[page]
+    width <- image_info(x[page])$width
+    height <- image_info(x[page])$height
 
     if (add_page) {
         grobs <- lapply(page, function(i)
             grobTree(rasterGrob(x[i]),
-                     textGrob(x=.9, y=.9, page[i],
+                     textGrob(x=.9, y=.9, i,
                               gp=gpar(col='steelblue', cex=2, fontfamily='Impact'))))
     } else {
         grobs <- lapply(page, function(i) rasterGrob(x[i]))
