@@ -5,6 +5,7 @@ Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role =
 Description: Yu's plot utilities. Most of them are experimental functions and not stable enough.
 Depends: R (>= 3.4.0)
 Imports:
+    ggforce,
     ggplot2,
     grDevices,
     grid,
@@ -13,9 +14,10 @@ Imports:
     meme,
     qrcode,
     scholar,
-    tidyr
+    tidyr,
+    venneuler
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 License: Artistic-2.0
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
