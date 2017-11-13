@@ -14,13 +14,16 @@
 ##' pubmed_trend("Yu Guangchuang[Full Author Name]", 2010:2016)
 ##' }
 pubmed_trend <- function(searchTerm, year, verbose=TRUE) {
-    if (length(searchTerm) == 1)
-        return(pubmed_trend.internal(searchTerm, year))
-    res <- lapply(searchTerm, pubmed_trend.internal, year=year)
-    names(res) <- searchTerm
-    res.df <- ldply(res)
-    colnames(res.df)[1] <- "TERM"
-    class(res.df) <- "pubmedTrend"
+    if (length(searchTerm) == 1) {
+        res.df <- pubmed_trend.internal(searchTerm, year)
+    } else {
+        res <- lapply(searchTerm, pubmed_trend.internal, year=year)
+        names(res) <- searchTerm
+        res.df <- ldply(res)
+        colnames(res.df)[1] <- "TERM"
+    }
+
+    class(res.df) <- c("pubmedTrend", "data.frame")
     return(res.df)
 }
 
@@ -48,7 +51,6 @@ pubmed_trend.internal <- function(searchTerm, year, verbose=TRUE) {
 ##' @export
 ##' @importFrom ggplot2 geom_line
 plot.pubmedTrend <- function(x, y, ...) {
-    class(x) <- "data.frame"
     if ('TERM' %in% colnames(x)) {
         mapping <- aes_(x = ~year, y = ~number, group = ~TERM, color = ~TERM)
     } else {
