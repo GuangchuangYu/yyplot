@@ -25,6 +25,16 @@ geom_ellipse <- function(x, y, a, b, fill, color="black") {
     geom_polygon(aes_(x=~x, y=~y), data=d, fill=fill, color=color)
 }
 
+geom_cake <- function(color) {
+    list(
+        geom_ellipse(5, 2, 4.4, 1.7, fill = color),
+        geom_ellipse(5,2, 4, 1.4, fill = color),
+        annotate("rect", xmin=1, ymin=2, xmax=9, ymax=5, fill=color, color=color),
+        annotate("segment", x=1, y=2, xend=1, yend=5),
+        annotate("segment", x=9, y=2, xend=9, yend=5),
+        geom_ellipse(5,5, 4, 1.4, fill = color)
+    )
+}
 
 ##' draw a cake using ggplot2
 ##'
@@ -40,12 +50,7 @@ geom_ellipse <- function(x, y, a, b, fill, color="black") {
 ggcake <- function(cake_color="#FF3399") {
     d <- data.frame(x = c(0, 10), y = c(0, 10))
     ggplot(d, aes_(x = ~x, y = ~y)) +
-        geom_ellipse(5, 2, 4.4, 1.7, fill = cake_color) +
-        geom_ellipse(5,2, 4, 1.4, fill = cake_color) +
-        annotate("rect", xmin=1, ymin=2, xmax=9, ymax=5, fill=cake_color, color=cake_color) +
-        annotate("segment", x=1, y=2, xend=1, yend=5) +
-        annotate("segment", x=9, y=2, xend=9, yend=5) +
-        geom_ellipse(5,5, 4, 1.4, fill = cake_color) +
+        geom_cake(cake_color) +
         geom_candle(2.5,4.5) +
         geom_candle(3,5) +
         geom_candle(4,4.5) +
