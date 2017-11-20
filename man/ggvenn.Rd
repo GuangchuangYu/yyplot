@@ -18,10 +18,12 @@ ggplot object
 venn plot using ggplot2
 }
 \examples{
+\dontrun{
 set.seed(2017-11-08)
 x <- matrix(sample(0:4, 40, TRUE, c(.5, .1, .1, .1, .1)), ncol=4)
 colnames(x) <- LETTERS[1:4]
 ggvenn(x)
+}
 }
 \author{
 guangchuang yu

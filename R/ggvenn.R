@@ -5,7 +5,8 @@
 ##' @param x data
 ##' @param alpha transparency of color
 ##' @return ggplot object
-##' @importFrom venneuler venneuler
+##' @importFrom rvcheck get_fun_from_pkg
+## @importFrom venneuler venneuler
 ##' @importFrom ggforce geom_circle
 ##' @importFrom ggplot2 geom_text
 ##' @importFrom ggplot2 coord_fixed
@@ -14,13 +15,16 @@
 ##' @export
 ##' @author guangchuang yu
 ##' @examples
+##' \dontrun{
 ##' set.seed(2017-11-08)
 ##' x <- matrix(sample(0:4, 40, TRUE, c(.5, .1, .1, .1, .1)), ncol=4)
 ##' colnames(x) <- LETTERS[1:4]
 ##' ggvenn(x)
+##' }
 ggvenn <- function(x, alpha = 0.5) {
     ## the venneuler depends on rJava
     ## maybe wrapping VennDiagram (output gList) as geom layer
+    venneuler <- get_fun_from_pkg("venneuler", "venneuler") ## for easy installation, as many users have issue of rJava installation
     y <- venneuler(x)
     d <- data.frame(y$centers,
                     diameters = y$diameters,
