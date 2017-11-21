@@ -86,6 +86,7 @@ GeomCake <- ggproto("GeomCake", Geom,
                       grobs <- lapply(1:nrow(data), function(i) {
                           vp <- viewport(x=data$x[i], y=data$y[i],
                                          width=data$size[i], height=data$size[i],
+                                         angle = data$angle[i],
                                          just = c("center", "center"),
                                          default.units = "native")
                           cakeCandleGrob(data$color.cake[i], data$color.candle[i], data$color.fire[i], vp=vp, name=i)
@@ -95,7 +96,7 @@ GeomCake <- ggproto("GeomCake", Geom,
                                        gTree(children = grobs))
                   },
                   non_missing_aes = c("x", "y", "size", "color.cake", "color.candle", "color.fire"),
-                  default_aes = aes(size=.1, color.cake="#FF3399", color.candle = "orange", color.fire="red"),
+                  default_aes = aes(size=.1, color.cake="#FF3399", color.candle = "orange", color.fire="red", angle=0),
                   draw_key = draw_key_blank
                   )
 
