@@ -1,8 +1,8 @@
 Package: yyplot
-Title: Yet Yu's Plot Utilities
+Title: Guangchuang Yu's Plot Utilities
 Version: 0.0.5
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
-Description: Yu's plot utilities. Most of them are experimental functions and not stable enough.
+Description: Miscellaneous plot utilities. Most of them are experimental, not stable enough and maybe changed or removed in future.
 Depends: R (>= 3.4.0)
 Imports:
     ggforce,
@@ -22,4 +22,4 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 License: Artistic-2.0
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.0.1
