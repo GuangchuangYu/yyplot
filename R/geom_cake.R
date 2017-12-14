@@ -9,10 +9,10 @@ candleGrob <- function(x, y, color.candle = "orange", color.fire = "red", vp=NUL
     xx = c(x+.005,x-.01,x+.01,x+.03,x+.015,x+0.005)
     yy = c(y+.2,y+.23,y+.26,y+.23,y+.2,y+.2)
 
-    gList(
-        rectGrob(x+width/2, y+height/2, width = width, height = height, gp = gpar(fill=color.candle), vp=vp),
-        polygonGrob(xx, yy, gp = gpar(fill = color.fire), vp=vp)
-    )
+    gTree(children = gList(
+              rectGrob(x+width/2, y+height/2, width = width, height = height, gp = gpar(fill=color.candle), vp=vp),
+              polygonGrob(xx, yy, gp = gpar(fill = color.fire), vp=vp)
+          ))
 }
 
 ellipseGrob <- function(x, y, a, b, gp=gpar(), vp=NULL) {
@@ -28,13 +28,14 @@ cakeGrob <- function(x=.5, y=.5, a=.4, b=.14, A=.44, B=.17, height=.3, gp=gpar()
     if (!is.null(gp$fill)) {
         gp2$col <- gp2$fill
     }
-    gList(
-        ellipseGrob(x, y-height, A, B, gp=gp, vp=vp),
-        ellipseGrob(x, y-height, a, b, gp=gp, vp=vp),
-        rectGrob(x, y-height/2, a*2, height, gp=gp2, vp=vp),
-        segmentsGrob(x-a, y-height, x-a, y, gp=gp, vp=vp),
-        segmentsGrob(x+a, y-height, x+a, y, gp=gp, vp=vp),
-        ellipseGrob(x, y, a, b, gp=gp, vp=vp))
+    gTree(children = gList(
+              ellipseGrob(x, y-height, A, B, gp=gp, vp=vp),
+              ellipseGrob(x, y-height, a, b, gp=gp, vp=vp),
+              rectGrob(x, y-height/2, a*2, height, gp=gp2, vp=vp),
+              segmentsGrob(x-a, y-height, x-a, y, gp=gp, vp=vp),
+              segmentsGrob(x+a, y-height, x+a, y, gp=gp, vp=vp),
+              ellipseGrob(x, y, a, b, gp=gp, vp=vp))
+          )
 }
 
 ##' @importFrom grid gTree
