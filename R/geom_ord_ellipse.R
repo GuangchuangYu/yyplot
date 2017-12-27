@@ -11,7 +11,7 @@
 ##' @importFrom ggplot2 layer
 ##' @importFrom utils modifyList
 ##' @export
-##' @author Guangchuang Yu
+##' @author Guangchuanghttp://guangchuangyu.github.io/ggtree/vignettes/ggtree-ggimage.html Yu
 ##' @references \url{http://lchblogs.netlify.com/post/2017-12-22-r-addconfellipselda/}
 geom_ord_ellipse <- function(mapping = NULL, ellipse_pro = 0.97, fill = NA, ...) {
     default_aes <- aes_(color = ~Groups, group = ~Groups)
@@ -61,3 +61,8 @@ StatOrdEllipse <- ggproto("StatOrdEllipse", Stat,
                           required_aes = c("x", "y", "group")
                           )
 
+
+## . function was from plyr package
+. <- function (..., .env = parent.frame()) {
+    structure(as.list(match.call()[-1]), env = .env, class = "quoted")
+}

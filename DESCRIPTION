@@ -1,6 +1,6 @@
 Package: yyplot
 Title: Guangchuang Yu's Plot Utilities
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
 Description: Miscellaneous plot utilities. Most of them are experimental, not stable enough and maybe changed or removed in future.
 Depends: R (>= 3.4.0)
