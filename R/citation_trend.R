@@ -25,7 +25,7 @@ plot_citation_trend <- function(id, pubid) {
     ggplot(df, aes_(~year, ~cites)) +
         geom_segment(aes_(xend=~year, yend=0), size=1, color='grey') +
         geom_point(size=8, color="#96B56C") +
-    geom_text(aes(label=~cites), size=3) +
+        geom_text(aes_(label=~cites), size=3) +
         ylim(NA, round(max(df$cites) * 1.1)) +
         xlab(NULL) +
         ylab(NULL) +
