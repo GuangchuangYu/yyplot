@@ -42,11 +42,11 @@ set_axis_text_color <- function(p, colors, mapping, fake_aes='color', axis="x") 
     p <- p + geom_text(aes_mapping, alpha=0) + gleg
     axis_color <- element_text(color=colors[p$data$type])
     if (axis == "x") {
-        p + theme(axis.text.x=axis_color)
+        p <- p + theme(axis.text.x=axis_color)
     } else if (axis == "y") {
-        p + theme(axis.text.y=axis_color)
+        p <- p + theme(axis.text.y=axis_color)
     } else {
-        p + theme(axis.text=axis_color)
+        p <- p + theme(axis.text=axis_color)
     }
     return(p)
 }
