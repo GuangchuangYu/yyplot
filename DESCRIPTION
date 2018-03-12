@@ -5,6 +5,7 @@ Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role =
 Description: Miscellaneous plot utilities. Most of them are experimental, not stable enough and maybe changed or removed in future.
 Depends: R (>= 3.4.0)
 Imports:
+    dlstats,
     ggforce,
     ggplot2,
     grDevices,
