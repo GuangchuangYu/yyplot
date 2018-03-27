@@ -8,6 +8,7 @@
 ##' @return data.frame
 ##' @author guangchuang yu
 ##' @importFrom plyr ldply
+##' @importFrom dplyr rename_
 ##' @export
 ##' @examples
 ##' \dontrun{
@@ -22,6 +23,10 @@ pubmed_trend <- function(searchTerm, year, verbose=TRUE) {
         res.df <- ldply(res)
         colnames(res.df)[1] <- "TERM"
     }
+
+    bg <- pubmed_trend.internal("", year, verbose = FALSE)
+    bg <- rename_(bg, ALL=~number)
+    res.df <- merge(res.df, bg, by="year", all.x=TRUE)
 
     class(res.df) <- c("pubmedTrend", "data.frame")
     return(res.df)
@@ -52,9 +57,9 @@ pubmed_trend.internal <- function(searchTerm, year, verbose=TRUE) {
 ##' @importFrom ggplot2 geom_line
 plot.pubmedTrend <- function(x, y, ...) {
     if ('TERM' %in% colnames(x)) {
-        mapping <- aes_(x = ~year, y = ~number, group = ~TERM, color = ~TERM)
+        mapping <- aes_(x = ~year, y = ~number/ALL, group = ~TERM, color = ~TERM)
     } else {
-        mapping <- aes_(x = ~year, y = ~number)
+        mapping <- aes_(x = ~year, y = ~number/ALL)
     }
     ggplot(x, mapping) + geom_line() + geom_point()
 }

@@ -6,7 +6,9 @@ Description: Miscellaneous plot utilities. Most of them are experimental, not st
 Depends: R (>= 3.4.0)
 Imports:
     dlstats,
+    dplyr,
     ggforce,
+    ggimage,
     ggplot2,
     grDevices,
     grid,
