@@ -1,6 +1,6 @@
 Package: yyplot
 Title: Guangchuang Yu's Plot Utilities
-Version: 0.0.6
+Version: 0.0.7
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
 Description: Miscellaneous plot utilities. Most of them are experimental, not stable enough and maybe changed or removed in future.
 Depends: R (>= 3.4.0)
@@ -8,8 +8,9 @@ Imports:
     dlstats,
     dplyr,
     ggforce,
-    ggimage,
+    ggimage (>= 0.1.5),
     ggplot2,
+    ggplotify (>= 0.0.3),
     grDevices,
     grid,
     gtable,
