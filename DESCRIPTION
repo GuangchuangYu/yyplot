@@ -22,6 +22,9 @@ Imports:
     rvcheck,
     scholar,
     tidyr
+Remotes:
+    GuangchuangYu/ggimage,
+    GuangchuangYu/ggplotify
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
