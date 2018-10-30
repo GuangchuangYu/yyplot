@@ -4,7 +4,8 @@
 \alias{set_font}
 \title{set_font}
 \usage{
-set_font(p, family = "sans", fontface = NULL, size = NULL, color = NULL)
+set_font(p, family = "sans", fontface = NULL, size = NULL,
+  color = NULL)
 }
 \arguments{
 \item{p}{ggplot object}

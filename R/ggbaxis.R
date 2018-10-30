@@ -10,6 +10,7 @@
 ##' @param axis one of 'x' or 'y'
 ##' @param breaks break interval
 ##' @return ggplot object
+##' @importFrom rvcheck get_aes_var
 ##' @importFrom ggplot2 facet_grid
 ##' @export
 ##' @examples
@@ -24,9 +25,9 @@ ggbaxis <- function(p, axis="x", breaks) {
 
     d = p$data
     if (axis == "x") {
-        v = as.character(p$mapping$x)
+        v = get_aes_var(p$mapping, "x")
     } else {
-        v = as.character(p$mapping$y)
+        v = get_aes_var(p$mapping, "y")
     }
     d$.type = NA
     d$.type[d[[v]] < breaks[1]] = "p1"
