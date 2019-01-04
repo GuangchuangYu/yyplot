@@ -26,6 +26,8 @@ Imports:
     scholar,
     tidyr,
     tools
+Remotes:
+    GuangchuangYu/gglayer
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
