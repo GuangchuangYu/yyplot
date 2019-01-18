@@ -1,10 +1,11 @@
 Package: yyplot
 Title: Guangchuang Yu's Plot Utilities
-Version: 0.0.7
+Version: 0.0.8
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
 Description: Miscellaneous plot utilities. Most of them are experimental, not stable enough and maybe changed or removed in future.
 Depends: R (>= 3.4.0)
 Imports:
+    DiagrammeRsvg,
     dlstats,
     dplyr,
     ggforce,
@@ -20,12 +21,13 @@ Imports:
     plyr,
     qrcode,
     RISmed,
+    rsvg,
     rvcheck,
     scholar,
-    tidyr
+    tidyr,
+    tools
 Remotes:
-    GuangchuangYu/ggimage,
-    GuangchuangYu/ggplotify
+    GuangchuangYu/gglayer
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
