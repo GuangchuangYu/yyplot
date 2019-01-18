@@ -9,6 +9,7 @@ Imports:
     dplyr,
     ggforce,
     ggimage (>= 0.1.5),
+    gglayer,
     ggplot2,
     ggplotify (>= 0.0.3),
     grDevices,
@@ -29,4 +30,4 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 License: Artistic-2.0
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
