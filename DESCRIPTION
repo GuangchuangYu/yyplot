@@ -17,6 +17,7 @@ Imports:
     grid,
     gtable,
     magick,
+    magrittr,
     meme,
     plyr,
     qrcode,

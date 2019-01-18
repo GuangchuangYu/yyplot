@@ -13,6 +13,7 @@
 ##' @importFrom rsvg rsvg_png
 ##' @importFrom rsvg rsvg_svg
 ##' @importFrom tools file_ext
+##' @importFrom magrittr %>%
 ##' @export
 gv2file <- function(gv, file, width=NULL, height=NULL) {
     ext <- tools::file_ext(file)
