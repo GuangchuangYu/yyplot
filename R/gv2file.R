@@ -8,7 +8,7 @@
 ##' @param height height
 ##' @return raw
 ##' @author Guangchuang
-##' @importFrom DiagrammeRsvg export_svg
+## @importFrom DiagrammeRsvg export_svg
 ##' @importFrom rsvg rsvg_pdf
 ##' @importFrom rsvg rsvg_png
 ##' @importFrom rsvg rsvg_svg
@@ -21,8 +21,8 @@ gv2file <- function(gv, file, width=NULL, height=NULL) {
     if (! tolower(ext) %in% c('pdf', 'tiff', 'png', 'jpg')) {
         stop("file extension should be one of 'pdf', 'svg' or 'png'.")
     }
-
-    svg <- DiagrammeRsvg::export_svg(gv) %>% charToRaw
+    export_svg <- get_fun_from_pkg("DiagrammeRsvg", "export_svg")
+    svg <- export_svg(gv) %>% charToRaw
     if (ext == 'pdf') {
         rsvg::rsvg_pdf(svg, file=file, width=width, height=height)
     } else if (ext == 'svg') {
