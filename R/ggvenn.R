@@ -5,7 +5,7 @@
 ##' @param x data
 ##' @param alpha transparency of color
 ##' @return ggplot object
-##' @importFrom rvcheck get_fun_from_pkg
+##' @importFrom yulab.utils get_fun_from_pkg
 ## @importFrom venneuler venneuler
 ##' @importFrom ggforce geom_circle
 ##' @importFrom ggplot2 geom_text

@@ -4,8 +4,13 @@
 \alias{slides2png}
 \title{slides2png}
 \usage{
-slides2png(pdf, outfile = "slides.png", scale = 1, page = "all",
-  add_page = TRUE)
+slides2png(
+  pdf,
+  outfile = "slides.png",
+  scale = 1,
+  page = "all",
+  add_page = TRUE
+)
 }
 \arguments{
 \item{pdf}{pdf file}

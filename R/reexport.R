@@ -3,3 +3,7 @@
 ggplot2::ggsave
 
 
+##' @importFrom ggfun set_font
+##' @export
+ggfun::set_font
+

@@ -6,6 +6,7 @@
 \alias{geom_cake}
 \alias{geom_ord_ellipse}
 \alias{ggsave}
+\alias{set_font}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -13,6 +14,8 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
+  \item{ggfun}{\code{\link[ggfun]{set_font}}}
+
   \item{gglayer}{\code{\link[gglayer]{geom_cake}}, \code{\link[gglayer]{geom_ord_ellipse}}}
 
   \item{ggplot2}{\code{\link[ggplot2]{ggsave}}}
